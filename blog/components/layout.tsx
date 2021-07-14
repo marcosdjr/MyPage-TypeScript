@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import Teste from '../pages/teste';
 import Projetos from '../pages/projetos';
 import Contatos from '../pages/contato';
 import Hobbies from '../pages/hobbies';
@@ -16,7 +15,7 @@ export const tituloDoSite = 'Marcos Domingues - Desenvolvedor'
 
 export default function Layout(
     //tem que passar 'tipado'. a interrogação permite que tenha a home ou não, e se não tiver, não dá erro.
-    { children, home }: { children: React.ReactNode, home?: boolean, }
+    { children, home }: { children: React.ReactNode, home?: boolean}
 ) {
     return (
         <div className={styles.container}>
@@ -66,19 +65,13 @@ export default function Layout(
                     <div className='navBar'>
                         <Navbar className="justify-content-center" expand="sm">
                             <Nav>
-                                <Nav.Link id="link-style" href="/">Hoobies</Nav.Link>
-                                <Nav.Link id="link-style" href="/create">Contato</Nav.Link>
-                                <Nav.Link id="link-style" href="/delete-all">Projetos</Nav.Link>
-                                
+                                <Nav.Link id="link-style" href="/hobbies">Hobbies</Nav.Link>
+                                <Nav.Link id="link-style" href="/contato">Contato</Nav.Link>
+                                <Nav.Link id="link-style" href="/projetos">Projetos</Nav.Link>
+
                             </Nav>
                         </Navbar>
                     </div>
-                    {/*
-                    <Link href="/"><a>Hobbies</a></Link>
-                    <Link href="/"><a>Contato</a></Link>
-                    <Link href="/"><a>Projetos</a></Link>
-                    <Link href="/"><a>Hobbies</a></Link>
-                    */}
                     {children}
                 </main>
                 {/* testando se é verdadeiro */}
